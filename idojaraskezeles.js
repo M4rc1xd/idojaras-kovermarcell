@@ -1,4 +1,6 @@
 import * as readline from "node:readline/promises";
+import fs from "node:fs";
+import * as csv from "csv/sync";
 
 async function maiidojaras() {
   const rl = readline.createInterface({
@@ -11,4 +13,15 @@ async function maiidojaras() {
   rl.close();
 }
 
-maiidojaras();
+function beolvas () {
+    const data = fs.readFileSync("idojaras.csv", "utf-8");
+    const feldolgozott = csv.parse(data, {
+        columns: true,
+        delimiter: ";",
+        skip_empty_lines: true
+    });
+    console.log(feldolgozott);
+
+}
+
+beolvas();
