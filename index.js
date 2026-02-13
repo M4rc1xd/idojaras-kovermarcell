@@ -1,4 +1,5 @@
 import { NapiIdojaras } from "./napiIdojaras.js";
+import { maiidojaras, beolvas } from "./idojaraskezeles.js";
 
 const idojarasAdatok = [
     new NapiIdojaras("1", 25, 15, "Napos"),
@@ -7,3 +8,8 @@ const idojarasAdatok = [
     new NapiIdojaras("4", 20, 12, "Esős"),
     new NapiIdojaras("5", 24, 16, "Részben felhős")
 ];
+
+const fajlIdojarasok = beolvas();
+for (const idojaras of fajlIdojarasok) {
+    console.log(idojaras.toString());
+}

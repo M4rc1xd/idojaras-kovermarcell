@@ -28,6 +28,8 @@ export function beolvas() {
     delimiter: ";",
     skip_empty_lines: true
   });
+  
+  const napiIdojarasList = [];
   for (const row of records) {
     const napiIdojaras = new NapiIdojaras(
       row.nap,
@@ -35,6 +37,8 @@ export function beolvas() {
       parseInt(row.min),
       row["időjárás"]
     );
-    console.log(napiIdojaras.toString());
+    napiIdojarasList.push(napiIdojaras);
   }
+  
+  return napiIdojarasList;
 }
