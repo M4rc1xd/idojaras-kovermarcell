@@ -12,3 +12,9 @@ console.log("Fájl adatok:");
 for (const idojaras of idojarasAdatok) {
     console.log(idojaras.toString());
 }
+
+const legmelegebb = idojarasAdatok.reduce((max, current) => 
+    current.maxTemp > max.maxTemp ? current : max
+);
+console.log("\nLegmagasabb maximum hőmérsékletű nap:");
+console.log(legmelegebb.toString());
