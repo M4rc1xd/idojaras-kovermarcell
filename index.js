@@ -7,7 +7,3 @@ const idojarasAdatok = [
     new NapiIdojaras("4", 20, 12, "Esős"),
     new NapiIdojaras("5", 24, 16, "Részben felhős")
 ];
-
-idojarasAdatok.forEach((idojaras) => {
-    console.log(idojaras.toString());
-});
