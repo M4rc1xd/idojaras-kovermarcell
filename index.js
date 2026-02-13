@@ -1,15 +1,14 @@
 import { NapiIdojaras } from "./napiIdojaras.js";
 import { maiidojaras, beolvas } from "./idojaraskezeles.js";
 
-const idojarasAdatok = [
-    new NapiIdojaras("1", 25, 15, "Napos"),
-    new NapiIdojaras("2", 22, 14, "Felhős"),
-    new NapiIdojaras("3", 28, 18, "Napos"),
-    new NapiIdojaras("4", 20, 12, "Esős"),
-    new NapiIdojaras("5", 24, 16, "Részben felhős")
-];
 
-const fajlIdojarasok = beolvas();
-for (const idojaras of fajlIdojarasok) {
+let idojarasAdatok = beolvas();
+
+const ujIdojaras = await maiidojaras();
+
+idojarasAdatok.push(ujIdojaras);
+
+console.log("Fájl adatok:");
+for (const idojaras of idojarasAdatok) {
     console.log(idojaras.toString());
 }
