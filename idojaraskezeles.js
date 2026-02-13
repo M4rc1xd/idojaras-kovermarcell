@@ -1,14 +1,14 @@
-import {readline} from "readline/promises";
+import * as readline from "node:readline/promises";
 
 async function maiidojaras() {
-    const rl = readline.createInterface({
+  const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
-    });
-    const minTemp = await rl.question("Minimum hőmérséklet: ");
-    const maxTemp = await rl.question("Maximum hőmérséklet: ");
-    const weather = await rl.question("Időjárás: ");
-    rl.close();
+    output: process.stdout,
+  });
+  const minTemp = await rl.question("Minimum hőmérséklet: ");
+  const maxTemp = await rl.question("Maximum hőmérséklet: ");
+  const weather = await rl.question("Időjárás: ");
+  rl.close();
 }
 
 maiidojaras();
