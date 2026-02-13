@@ -3,7 +3,7 @@ import fs from "node:fs";
 import * as csv from "csv/sync";
 import { NapiIdojaras } from "./napiIdojaras.js";
 
-async function maiidojaras() {
+export async function maiidojaras() {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -21,7 +21,7 @@ async function maiidojaras() {
 }
 
 
-function beolvas() {
+export function beolvas() {
   const fileContent = fs.readFileSync("idojaras.csv", "utf-8");
   const records = csv.parse(fileContent, {
     columns: true,
