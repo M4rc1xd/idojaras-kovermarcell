@@ -8,10 +8,16 @@ async function maiidojaras() {
     input: process.stdin,
     output: process.stdout,
   });
+  
+  const date = new Date();
+  const day = date.getDay();
+  
   const minTemp = await rl.question("Minimum hőmérséklet: ");
   const maxTemp = await rl.question("Maximum hőmérséklet: ");
   const weather = await rl.question("Időjárás: ");
   rl.close();
+  
+  return new NapiIdojaras(day, parseInt(maxTemp), parseInt(minTemp), weather);
 }
 
 
@@ -32,5 +38,3 @@ function beolvas() {
     console.log(napiIdojaras.toString());
   }
 }
-
-beolvas();
